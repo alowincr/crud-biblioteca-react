@@ -2,7 +2,7 @@
 
 Una aplicación web desarrollada con **React** que permite gestionar una colección de libros. Puedes **agregar**, **editar**, **eliminar** y **exportar** libros a PDF. Los datos se almacenan en el **LocalStorage** del navegador.
 
-![Captura](landing.png)
+![Captura](/public/landing.png)
 
 ---
 
