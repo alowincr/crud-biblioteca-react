@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  background-color: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  max-width: 800px;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1.2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+form input {
+  padding: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 8px #4caf50aa;
+  background-color: #fff;
+}
+
+form button {
+  grid-column: span 2;
+  padding: 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #4caf50aa;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: #388e3c;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #388e3cbb;
+}
+
+.book-list {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #4caf50 #f0f0f0;
+}
+
+.book-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.book-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.book-list::-webkit-scrollbar-thumb {
+  background-color: #4caf50;
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+.book-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  user-select: none;
+}
+
+.book-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+}
+
+.book-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: 0.02em;
+}
+
+.book-info {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.book-info span {
+  font-weight: 600;
+  color: #444;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.export-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: #e53935;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.export-button:hover {
+  background-color: #c62828;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 8px;        
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.edit-button,
+.delete-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 14px;
+  color: white;
+}
+
+/* ✏️ Botón Editar (Verde) */
+.edit-button {
+  background-color: #4caf50; /* Verde base */
+}
+
+.edit-button:hover {
+  background-color: #388e3c; /* Verde más oscuro */
+}
+
+/* 🗑️ Botón Eliminar (Rojo) */
+.delete-button {
+  background-color: #f44336; /* Rojo base */
+}
+
+.delete-button:hover {
+  background-color: #d32f2f; /* Rojo más oscuro */
+}
